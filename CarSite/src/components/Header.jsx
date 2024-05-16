@@ -8,6 +8,7 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
+import Logo from "../images/BMW_logo.svg";
 import "./header.css";
 
 export default function Header() {
@@ -37,7 +38,10 @@ export default function Header() {
         boxShadow: "none",
       }}
     >
-      <Toolbar disableGutters>
+      <Toolbar
+        disableGutters
+        sx={{ maxWidth: "1150px", width: "100%", margin: "0 auto" }}
+      >
         <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
           <IconButton
             size="large"
@@ -72,6 +76,11 @@ export default function Header() {
             </MenuItem>
           </Menu>
         </Box>
+        <img
+          src={Logo}
+          alt="BMW Logo"
+          style={{ width: "100%", maxWidth: "48px" }}
+        />
         <Box
           sx={{
             flexGrow: 1,
