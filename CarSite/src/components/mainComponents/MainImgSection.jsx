@@ -5,7 +5,13 @@ export default function MainImgSection() {
     <Box
       component={"section"}
       className="main-img"
-      sx={{ position: "relative", zIndex: "-1" }}
+      sx={{
+        position: "relative",
+        zIndex: "-1",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
     >
       <img
         style={{ maxWidth: "100%" }}
@@ -14,21 +20,31 @@ export default function MainImgSection() {
         }
         alt=""
       />
-      <Typography
+      <Box
+        className="mainImageText"
         sx={{
           position: "absolute",
-          top: "20%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          fontWeight: "600",
           width: "100%",
-          textAlign: "center",
+          textAlign: "left",
           color: "white",
+          padding: "0 4rem",
+          bottom: "14%",
         }}
-        variant="h2"
       >
-        С удовольствием за рулем
-      </Typography>
+        <Typography
+          fontSize="1rem"
+          fontWeight="300"
+          lineHeight="1rem"
+          variant="h4"
+          sx={{ marginBottom: "1rem" }}
+          component="p"
+        >
+          <b>С удовольствием</b> за рулем
+        </Typography>
+        <Typography fontSize="1rem" fontWeight="300" variant="h2">
+          ВСЕ МЕНЯЕТСЯ. ЦЕННОСТИ ОСТАЮТСЯ.
+        </Typography>
+      </Box>
     </Box>
   );
 }

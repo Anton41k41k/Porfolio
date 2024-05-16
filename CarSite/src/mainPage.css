@@ -7,8 +7,6 @@
   text-align: center;
   font-size: 18px;
   background: #fff;
-
-  /* Center slide text vertically */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,4 +18,10 @@
   height: 100%;
   max-height: 60vh;
   object-fit: cover;
+}
+
+@media (min-width: 340px) {
+  .css-x6bbn5-MuiTypography-root {
+    font-size: 2.9rem;
+  }
 }

@@ -84,19 +84,37 @@ export default function Header() {
         >
           <Button
             className="headerButton"
-            sx={{ my: 2, color: "white", display: "block" }}
+            sx={{
+              my: 2,
+              color: "white",
+              display: "block",
+              borderRadius: "0",
+              borderBottom: "4px transparent ",
+            }}
           >
             Главная
           </Button>
           <Button
             className="headerButton"
-            sx={{ my: 2, color: "white", display: "block" }}
+            sx={{
+              my: 2,
+              color: "white",
+              display: "block",
+              borderRadius: "0",
+              borderBottom: "4px transparent ",
+            }}
           >
             Автомобили
           </Button>
           <Button
             className="headerButton"
-            sx={{ my: 2, color: "white", display: "block" }}
+            sx={{
+              my: 2,
+              color: "white",
+              display: "block",
+              borderRadius: "0",
+              borderBottom: "4px transparent ",
+            }}
           >
             О нас
           </Button>

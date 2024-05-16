@@ -60,7 +60,11 @@ export default function MainPageInformaton() {
                 >
                   {item.title}
                 </Typography>
-                <Typography variant="p" className="newItemsInfo_text">
+                <Typography
+                  variant="p"
+                  className="newItemsInfo_text"
+                  textAlign="justify"
+                >
                   {item.text}
                 </Typography>
               </Box>
