@@ -5,11 +5,7 @@ import MainPageInformaton from "./components/mainComponents/MainPageInformation"
 
 export default function MainPage() {
   return (
-    <Box
-      component={"main"}
-      className="main"
-      sx={{ position: "absolute", maxWidth: "100vw" }}
-    >
+    <Box component={"main"} className="main">
       <MainImgSection />
       <MainPageInformaton />
     </Box>
