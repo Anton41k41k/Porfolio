@@ -8,6 +8,7 @@ import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 import MainPage from "./MainPage";
 import { ThemeProvider, createTheme, responsiveFontSizes } from "@mui/material";
+import AllModelsPage from "./AllModelsPage";
 
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
@@ -19,6 +20,11 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<MainPage />} />
+              <Route
+                path="allModels"
+                element={<AllModelsPage />}
+                params="grey"
+              />
               {/* {cookies.token && <Route path=":filmId" element={<FilmPage />} />}
             <Route path="authorization" element={<AuthorizationPage />} /> */}
               <Route path="*" element={<p>Not found</p>} />
