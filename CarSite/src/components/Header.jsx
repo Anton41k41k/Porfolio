@@ -6,12 +6,14 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
-import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import Logo from "../images/BMW_logo.svg";
-import "./header.css";
+import LinkButton from "./LinkButton.jsx";
+import { Link, useLocation } from "react-router-dom";
+import LogoBARS from "../images/Logo.jsx";
 
 export default function Header() {
+  const { pathname } = useLocation();
+  console.log(pathname);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -27,11 +29,13 @@ export default function Header() {
       component="header"
       square
       sx={{
-        borderBottom: "1px solid #FFFFFF",
-        zIndex: "1",
+        borderBottom: `${
+          pathname === "/" ? "1px solid #FFFFFF" : "1px solid #666666"
+        }`,
+        zIndex: "7",
         backgroundColor: "rgba(0, 0, 0, 0)",
-        position: "absolute",
-        maxWidth: "1200px",
+        position: `${pathname === "/" ? "absolute" : "relative"}`,
+        maxWidth: "1400px",
         width: "100%",
         left: "50%",
         transform: "translate(-50%, 0%)",
@@ -40,7 +44,7 @@ export default function Header() {
     >
       <Toolbar
         disableGutters
-        sx={{ maxWidth: "1150px", width: "100%", margin: "0 auto" }}
+        sx={{ maxWidth: "97%", width: "100%", margin: "0 auto", minWidth: "0" }}
       >
         <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
           <IconButton
@@ -49,7 +53,10 @@ export default function Header() {
             aria-controls="menu-appbar"
             aria-haspopup="true"
             onClick={handleOpenNavMenu}
-            color="inherit"
+            sx={{
+              color: `${pathname === "/" ? "white" : "#666666"}`,
+              ":hover": { color: `${pathname === "/" ? "white" : "#262626"}` },
+            }}
           >
             <MenuIcon />
           </IconButton>
@@ -71,16 +78,33 @@ export default function Header() {
               display: { xs: "block", md: "none" },
             }}
           >
-            <MenuItem onClick={handleCloseNavMenu} className="headerButton">
+            <MenuItem
+              component={Link}
+              to="/"
+              onClick={handleCloseNavMenu}
+              className="headerButton"
+            >
               <Typography textAlign="center">Главная</Typography>
+            </MenuItem>
+            <MenuItem
+              component={Link}
+              to="allModels"
+              onClick={handleCloseNavMenu}
+              className="headerButton"
+            >
+              <Typography textAlign="center">Автомобили</Typography>
+            </MenuItem>
+            <MenuItem
+              component={Link}
+              to="aboutUs"
+              onClick={handleCloseNavMenu}
+              className="headerButton"
+            >
+              <Typography textAlign="center">О нас</Typography>
             </MenuItem>
           </Menu>
         </Box>
-        <img
-          src={Logo}
-          alt="BMW Logo"
-          style={{ width: "100%", maxWidth: "48px" }}
-        />
+        <LogoBARS color={pathname === "/" ? "#FFFFFF" : "#666666"} />
         <Box
           sx={{
             flexGrow: 1,
@@ -89,44 +113,12 @@ export default function Header() {
             gap: "2rem",
             maxWidth: "1200px",
             margin: "0 auto",
+            height: "100%",
           }}
         >
-          <Button
-            className="headerButton"
-            sx={{
-              my: 2,
-              color: "white",
-              display: "block",
-              borderRadius: "0",
-              borderBottom: "4px transparent ",
-            }}
-          >
-            Главная
-          </Button>
-          <Button
-            className="headerButton"
-            sx={{
-              my: 2,
-              color: "white",
-              display: "block",
-              borderRadius: "0",
-              borderBottom: "4px transparent ",
-            }}
-          >
-            Автомобили
-          </Button>
-          <Button
-            className="headerButton"
-            sx={{
-              my: 2,
-              color: "white",
-              display: "block",
-              borderRadius: "0",
-              borderBottom: "4px transparent ",
-            }}
-          >
-            О нас
-          </Button>
+          <LinkButton to="/" text="Главная" pathname={pathname} />
+          <LinkButton to="allModels" text="Автомобили" pathname={pathname} />
+          <LinkButton to="aboutUs" text="О нас" pathname={pathname} />
         </Box>
       </Toolbar>
     </AppBar>
