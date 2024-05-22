@@ -21,7 +21,7 @@ export default function LogoBARS({ color }) {
         height: "auto",
       }}
       version="1.1"
-      viewBox="500 300 4034.7 4034.7"
+      viewBox="900 500 3534.7 3534.7"
       xmlSpace="preserve"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
