@@ -29,7 +29,7 @@ export default function MainImgSection() {
             textAlign: "left",
             color: "white",
             padding: { xs: "0 2rem", md: "0 6rem" },
-            top: { md: "15%", lg: "12%" },
+            top: { md: "15%", lg: "12%", xl: "12%" },
             bottom: { xs: "8%", sm: "8%" },
           }}
         >
