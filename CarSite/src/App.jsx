@@ -9,8 +9,14 @@ import Layout from "./components/Layout";
 import MainPage from "./MainPage";
 import { ThemeProvider, createTheme, responsiveFontSizes } from "@mui/material";
 import AllModelsPage from "./AllModelsPage";
+import ContactsPage from "./ContactsPage";
+import CarPage from "./CarPage";
 
-let theme = createTheme();
+let theme = createTheme({
+  typography: {
+    color: "#262626",
+  },
+});
 theme = responsiveFontSizes(theme);
 export default function App() {
   return (
@@ -20,13 +26,9 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<MainPage />} />
-              <Route
-                path="allModels"
-                element={<AllModelsPage />}
-                params="grey"
-              />
-              {/* {cookies.token && <Route path=":filmId" element={<FilmPage />} />}
-            <Route path="authorization" element={<AuthorizationPage />} /> */}
+              <Route path="allModels" element={<AllModelsPage />} />
+              <Route path="contacts" element={<ContactsPage />} />
+              <Route path=":carId" element={<CarPage />} />
               <Route path="*" element={<p>Not found</p>} />
             </Route>
           </Routes>
