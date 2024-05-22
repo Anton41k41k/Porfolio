@@ -13,7 +13,6 @@ import LogoBARS from "../images/Logo.jsx";
 
 export default function Header() {
   const { pathname } = useLocation();
-  console.log(pathname);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -96,11 +95,11 @@ export default function Header() {
             </MenuItem>
             <MenuItem
               component={Link}
-              to="aboutUs"
+              to="contacts"
               onClick={handleCloseNavMenu}
               className="headerButton"
             >
-              <Typography textAlign="center">О нас</Typography>
+              <Typography textAlign="center">Контакты</Typography>
             </MenuItem>
           </Menu>
         </Box>
@@ -118,7 +117,7 @@ export default function Header() {
         >
           <LinkButton to="/" text="Главная" pathname={pathname} />
           <LinkButton to="allModels" text="Автомобили" pathname={pathname} />
-          <LinkButton to="aboutUs" text="О нас" pathname={pathname} />
+          <LinkButton to="contacts" text="Контакты" pathname={pathname} />
         </Box>
       </Toolbar>
     </AppBar>
