@@ -53,8 +53,8 @@ export default function MainPageInformaton() {
             freeMode={true}
             spaceBetween={40}
             autoplay={{
-              delay: 3500,
-              disableOnInteraction: false,
+              delay: 4000,
+              disableOnInteraction: true,
             }}
             style={{
               padding: "1rem 1rem",
@@ -155,7 +155,7 @@ export default function MainPageInformaton() {
           }}
           variant="h3"
         >
-          ЭЛЕКТРИЧЕСКАЯ ДИНАМИКА ДВИЖЕНИЯ ВЫСОЧАЙШЕГО УРОВНЯ
+          iX M60: ЭЛЕКТРИЧЕСКАЯ ДИНАМИКА ДВИЖЕНИЯ ВЫСОЧАЙШЕГО УРОВНЯ
         </Box>
         <Box
           sx={{
@@ -181,7 +181,7 @@ export default function MainPageInformaton() {
           </Typography>
           <Button
             component={Link}
-            to="allModels"
+            to="/0"
             variant="outlined"
             sx={{
               color: "white",
