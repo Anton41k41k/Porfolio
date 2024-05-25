@@ -46,10 +46,11 @@ export default function CardCar({ carData }) {
           variant="h5"
           sx={{
             fontSize: {
-              xs: "0.6rem",
-              sm: "0.7rem",
-              md: "1rem",
+              xs: "1rem",
+              sm: "1.1rem",
+              md: "1.2rem",
               lg: "1.2rem",
+              xl: "1.3rem",
             },
           }}
         >
@@ -57,7 +58,7 @@ export default function CardCar({ carData }) {
         </Typography>
         <Box sx={{ display: "flex" }}>
           {carData.types_engine.map((type, index) => (
-            <Box key={type.id}>
+            <Box key={type.id} display="flex">
               {index > 0 && <Divider orientation="vertical" flexItem />}
               <Typography
                 key={type.id}
