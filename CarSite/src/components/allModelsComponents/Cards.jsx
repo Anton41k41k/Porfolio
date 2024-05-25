@@ -1,20 +1,12 @@
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
-import { useEffect, useState } from "react";
 import CardCar from "./Card";
+import PropTypes from "prop-types";
+Cards.propTypes = {
+  initCards: PropTypes.arrayOf(PropTypes.object),
+  filterParams: PropTypes.string,
+};
 
-export default function Cards() {
-  const [cards, setCards] = useState(null);
-  useEffect(() => {
-    fetch("https://66454468b8925626f8916e2a.mockapi.io/db/mainPage/cards", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-    })
-      .then((response) => response.json())
-      .then((result) => setCards(result));
-  }, []);
-
+export default function Cards({ initCards, filterParams }) {
   return (
     <Grid
       container
@@ -22,7 +14,13 @@ export default function Cards() {
       justifyContent="center"
       sx={{ width: "100%" }}
     >
-      {!!cards && cards.map((card) => <CardCar key={card.id} carData={card} />)}
+      {initCards &&
+        !filterParams &&
+        initCards.map((card) => <CardCar key={card.id} carData={card} />)}
+      {filterParams &&
+        initCards
+          .filter((card) => card.make === filterParams)
+          .map((card) => <CardCar key={card.id} carData={card} />)}
     </Grid>
   );
 }
